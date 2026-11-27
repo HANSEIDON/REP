@@ -1,0 +1,174 @@
+/* ============================================================
+   REP — Design Tokens
+   Dark-first. One accent color, grayscale base, no shadows by
+   default. Spacing 4/8/12/16/24/32/48 · Radius 8/12/16.
+   ============================================================ */
+
+:root {
+  /* spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+
+  /* radius */
+  --r-s: 8px;
+  --r-m: 12px;
+  --r-l: 16px;
+
+  /* motion (ease-out, short) */
+  --dur-fast: 150ms;
+  --dur-base: 200ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* type */
+  --font-body:
+    'Barlow',
+    'Apple SD Gothic Neo',
+    'Malgun Gothic',
+    system-ui,
+    sans-serif;
+  --font-display:
+    'Barlow Condensed',
+    'Barlow',
+    'Apple SD Gothic Neo',
+    system-ui,
+    sans-serif;
+
+  /* safe areas (iOS notch / home indicator) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* ---------- Dark (default) ---------- */
+[data-theme='dark'] {
+  --bg: #0f0f11;
+  --surface: #17171a;
+  --fg: #f4f4f5;
+  --fg-muted: #9b9ba3;
+  --fg-faint: #5a5a63;
+  --line: #26262b;
+  --on-primary: #0f0f11;
+  --destructive: #ef4444;
+}
+
+/* ---------- Light ---------- */
+[data-theme='light'] {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --fg: #17171a;
+  --fg-muted: #6e6e75;
+  --fg-faint: #a3a3ab;
+  --line: #e8e8ec;
+  --on-primary: #ffffff;
+  --destructive: #dc2626;
+}
+
+/* ---------- Accent colors ----------
+   A: Signal Orange (default)  B: Blue  C: Lime (auto-darken light) */
+[data-accent='orange'][data-theme='dark'] {
+  --primary: #ff6b35;
+  --primary-text: #ff8b57;
+}
+[data-accent='orange'][data-theme='light'] {
+  --primary: #f25c1e;
+  --primary-text: #d8491a;
+}
+[data-accent='blue'][data-theme='dark'] {
+  --primary: #4d9fff;
+  --primary-text: #7fb9ff;
+  --on-primary: #0f0f11;
+}
+[data-accent='blue'][data-theme='light'] {
+  --primary: #2e7fe8;
+  --primary-text: #1f63c4;
+  --on-primary: #ffffff;
+}
+[data-accent='lime'][data-theme='dark'] {
+  --primary: #c6f24e;
+  --primary-text: #c6f24e;
+  --on-primary: #0f0f11;
+}
+[data-accent='lime'][data-theme='light'] {
+  --primary: #84a300;
+  --primary-text: #6b8500;
+  --on-primary: #ffffff;
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  /* iOS: no tap flash, no long-press callout/selection on UI chrome */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  overscroll-behavior-y: none;
+}
+
+button,
+a,
+[role='button'] {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 16px; /* iOS: prevent zoom on focus */
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* tabular numbers for weights/reps/countdown */
+.num {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

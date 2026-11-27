@@ -1,0 +1,140 @@
+/* S1 Home */
+
+.home__head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home__date {
+  margin: 0;
+  font-size: 14px;
+  color: var(--fg-muted);
+}
+
+.home__cta {
+  margin-top: var(--sp-2);
+}
+
+/* saved routine cards — 2-col grid, tap to start */
+.home__routines {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+.home__routine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0; /* grid item: allow 1fr track, let name ellipsis work */
+  min-height: 56px;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  text-decoration: none;
+  color: inherit;
+}
+
+.home__routine:active {
+  border-color: var(--primary);
+}
+
+.home__routine__name {
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home__routine__meta {
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+.home__routine__badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+/* weekly stats — flat 3-column, line separators (no cards) */
+.home__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.home__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sp-3) var(--sp-4);
+}
+
+.home__stat + .home__stat {
+  border-left: 1px solid var(--line);
+}
+
+.home__stat-n {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.home__stat-l {
+  font-size: 12px;
+  color: var(--fg-faint);
+}
+
+/* favorites / recents — horizontal scroll */
+.home__row {
+  display: flex;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  padding: 2px;
+  margin: -2px;
+  scrollbar-width: none;
+}
+
+.home__row::-webkit-scrollbar {
+  display: none;
+}
+
+.home__item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 72px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.home__thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--r-m);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.home__name {
+  font-size: 13px;
+  color: var(--fg-muted);
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

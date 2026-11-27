@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REP</title>
+    <!-- 존재하지 않는 경로면 무조건 앱 루트로: Netlify 기본 404(배지 포함) 대신 이걸 서빙 -->
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      window.location.replace("/");
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background: #0f0f11;
+        color: #9a9aa0;
+        font-family: system-ui, -apple-system, sans-serif;
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div>REP으로 이동 중…</div>
+  </body>
+</html>

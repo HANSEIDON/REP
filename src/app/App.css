@@ -1,0 +1,116 @@
+/* app shell layout */
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh; /* iOS: avoids 100vh URL-bar bug */
+  max-width: 480px; /* desktop preview: phone width */
+  margin: 0 auto;
+}
+
+.shell__main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden; /* iOS: no horizontal page scroll */
+  -webkit-overflow-scrolling: touch;
+  padding-top: calc(var(--safe-top) + var(--sp-4));
+  padding-left: var(--sp-4);
+  padding-right: var(--sp-4);
+  padding-bottom: var(--sp-6);
+  min-height: 0;
+}
+
+/* keep-alive: inactive tab stays mounted but fully hidden (display none,
+   not just visibility — removes it from layout & hit-testing) */
+.tab-keep[hidden] {
+  display: none !important;
+}
+
+/* full-screen mode (no tab bar) */
+.screen {
+  min-height: 100dvh;
+  padding-top: calc(var(--safe-top) + var(--sp-3));
+  padding-left: var(--sp-4);
+  padding-right: var(--sp-4);
+  padding-bottom: calc(var(--safe-bottom) + var(--sp-6));
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* page header */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.page__title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1;
+  margin: var(--sp-2) 0 0;
+  letter-spacing: -0.01em;
+}
+
+.page__sub {
+  color: var(--fg-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* generic list row (44px min tap target) */
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 56px;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row__label {
+  flex: 1;
+  font-size: 16px;
+}
+
+.row__meta {
+  color: var(--fg-muted);
+  font-size: 14px;
+}
+
+/* section block */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  padding: var(--sp-4);
+}
+
+.section__title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin: 0 0 var(--sp-3);
+}
+
+/* empty state */
+.empty {
+  text-align: center;
+  color: var(--fg-muted);
+  padding: var(--sp-12) var(--sp-4);
+  font-size: 15px;
+}
+
+.empty__title {
+  font-size: 17px;
+  color: var(--fg);
+  margin: 0 0 var(--sp-2);
+  font-weight: 600;
+}

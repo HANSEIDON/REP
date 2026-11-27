@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko" data-theme="dark" data-accent="orange">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>REP</title>
+    <meta name="description" content="개인용 오프라인 운동 기록" />
+    <meta name="theme-color" content="#0F0F11" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="REP" />
+    <style>
+      /* Netlify 무료 플랜이 모든 HTML에 "Powered by Netlify" 배지를 자동 주입함 (iframe#nl-badge-frame).
+         공식적으로는 무료 플랜에서 제거 불가 → CSS로 숨김. Netlify가 마크업을 바꾸면 다시 뜰 수 있음. */
+      #nl-badge-frame,
+      #nl-hud-frame,
+      [id^="nl-"],
+      [id^="netlify-"],
+      iframe[src*="netlify"],
+      iframe[title="Powered by Netlify"] {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+    </style>
+    <script>
+      // flash 방지: paint 전에 테마/색상 초기화 (localStorage)
+      (function () {
+        try {
+          var t = localStorage.getItem("rep.theme");
+          var a = localStorage.getItem("rep.accent");
+          document.documentElement.dataset.theme = t === "light" ? "light" : "dark";
+          document.documentElement.dataset.accent = a || "orange";
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m)
+            m.content =
+              document.documentElement.dataset.theme === "light" ? "#FAFAF8" : "#0F0F11";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

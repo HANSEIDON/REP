@@ -1,0 +1,126 @@
+// 한글 라벨 매핑 — 17 근육 슬러그, 41 기구 슬러그, 레벨·패턴·카테고리
+
+export const MUSCLE_KO: Record<string, string> = {
+  adductors: '내측허벅지',
+  back: '등',
+  biceps: '이두근',
+  calves: '종아리',
+  chest: '가슴',
+  core: '코어',
+  forearms: '전완근',
+  glutes: '둔근',
+  hamstrings: '햄스트링',
+  lats: '광배근',
+  lower_back: '하부등',
+  neck: '목',
+  obliques: '옆구리',
+  quads: '허벅지 앞',
+  shoulders: '어깨',
+  tibialis: '정강이',
+  traps: '승모근',
+  triceps: '삼두근',
+}
+
+// 표시 순서: 주요 대근부터
+export const MUSCLE_ORDER = [
+  'chest',
+  'back',
+  'lats',
+  'shoulders',
+  'biceps',
+  'triceps',
+  'glutes',
+  'quads',
+  'hamstrings',
+  'core',
+  'obliques',
+  'calves',
+  'traps',
+  'forearms',
+  'neck',
+  'tibialis',
+  'lower_back',
+] as const
+
+// 운동 유형 필터 — 전체 / 기구 운동 / 맨몸 운동
+export const TYPE_FILTERS = [
+  { value: 'all', label: '전체' },
+  { value: 'equipment', label: '기구 운동' },
+  { value: 'bodyweight', label: '맨몸 운동' },
+] as const
+
+export const EQUIPMENT_KO: Record<string, string> = {
+  'ab-wheel': '아바휠',
+  anchor: '앵커',
+  backpack: '배낭',
+  band: '밴드',
+  barbell: '바벨',
+  'battle-ropes': '배틀로프',
+  bench: '벤치',
+  cable: '케이블',
+  'captains-chair': '캡틴체어',
+  'cardio-machine': '유산소 머신',
+  'decline-bench': '딥락 벤치',
+  doorway: '문틀',
+  dumbbell: '덤벨',
+  'ez-bar': 'EZ바',
+  'foam-roller': '폼롤러',
+  'glute-ham-developer': 'GHD',
+  'incline-bench': '인클라인 벤치',
+  'jump-rope': '줄넘기',
+  kettlebell: '켈러벨',
+  landmine: '랜드마인',
+  machine: '머신',
+  'medicine-ball': '메디신볼',
+  'mini-band': '미니밴드',
+  'parallel-bars': '평행봉',
+  parallettes: '팔라렛',
+  plate: '원판',
+  'plyo-box': '플라이오박스',
+  post: '포스트',
+  'preacher-bench': '프리처 벤치',
+  'pull-up-bar': '턱걸이 바',
+  'roman-chair': '로만체어',
+  'smith-machine': '스미스 머신',
+  'squat-rack': '스쿼트랙',
+  'stability-ball': '안정성 볼',
+  step: '스텝박스',
+  'suspension-trainer': '서스펜션',
+  table: '테이블',
+  towel: '수건',
+  'trap-bar': '트랩바',
+  wall: '벽',
+  'wrist-roller': '위스트롤러',
+}
+
+export const LEVEL_KO: Record<string, string> = {
+  beginner: '초급',
+  intermediate: '중급',
+  advanced: '고급',
+}
+
+export const PATTERN_KO: Record<string, string> = {
+  squat: '스쿼트',
+  hinge: '힌지',
+  lunge: '런지',
+  'push-h': '가로 푸시',
+  'push-v': '세로 푸시',
+  'pull-h': '가로 풀',
+  'pull-v': '세로 풀',
+  core: '코어',
+  rotation: '회전',
+  carry: '캐리',
+  plyo: '플라이오',
+  cardio: '유산소',
+  isometric: '아이소메트릭',
+  mobility: '가동범위',
+  stretch: '스트레칭',
+}
+
+export const CATEGORY_KO: Record<string, string> = {
+  compound: '복합',
+  isolation: '고립',
+  conditioning: '컨디셔닝',
+  mobility: '가동범위',
+  stretch: '스트레칭',
+}

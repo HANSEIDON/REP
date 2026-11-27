@@ -1,0 +1,69 @@
+/* 전역 휴식 타이머 바 — TabBar 바로 위 in-flow 슬림 바.
+   transform/opacity만 애니메이션. 터치 타깃 48px+. */
+.restbar {
+  position: relative;
+  flex: 0 0 auto;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.restbar__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--sp-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--fg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.restbar__name {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.restbar__time {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary-text);
+}
+
+.restbar__cta {
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+/* 진행라인: transform(scaleX)만, GPU 경량 */
+.restbar__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.restbar__fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  background: var(--primary);
+  will-change: transform;
+}

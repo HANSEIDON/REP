@@ -1,0 +1,147 @@
+/* S6 Settings — controls not covered by app/App.css */
+
+.row__ctrl {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex: 0 0 auto;
+}
+
+/* segmented control */
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--surface);
+}
+
+.seg__btn {
+  min-height: 40px;
+  min-width: 52px;
+  padding: 0 var(--sp-3);
+  border: none;
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 14px;
+  font-family: var(--font-body);
+  border-radius: calc(var(--r-s) - 2px);
+}
+
+.seg__btn.is-on {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+}
+
+/* accent swatches */
+.swatches {
+  display: inline-flex;
+  gap: var(--sp-3);
+}
+
+.swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.swatch.is-on {
+  outline-color: var(--fg);
+}
+
+.swatch--orange {
+  background: #ff6b35;
+}
+
+.swatch--blue {
+  background: #3b82f6;
+}
+
+.swatch--lime {
+  background: #a3e635;
+}
+
+/* small input + buttons */
+.field--sm {
+  width: 72px;
+  min-height: 40px;
+  padding: 0 var(--sp-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn--sm {
+  min-height: 40px;
+  padding: 0 var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.btn--sm:disabled {
+  opacity: 0.5;
+}
+
+/* switch */
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 40px;
+  padding: 0 4px 0 0;
+  border: none;
+  background: transparent;
+  color: var(--fg-muted);
+}
+
+.switch__knob {
+  position: relative;
+  width: 46px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--line);
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.switch__knob::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--fg-muted);
+  transition: transform var(--dur-base) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+
+.switch.is-on .switch__knob {
+  background: var(--primary);
+}
+
+.switch.is-on .switch__knob::after {
+  transform: translateX(18px);
+  background: var(--on-primary);
+}
+
+.switch.is-on .switch__label {
+  color: var(--fg);
+}
+
+/* data buttons */
+.data-btns {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}

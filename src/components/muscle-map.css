@@ -1,0 +1,52 @@
+.muscle-map {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) 0;
+  /* @emmorts/body-muscles (body-chart-container) 테마 오버라이드 — 다크 UI 맞춤 */
+  --bm-padding: 0;
+  --bm-max-height: none;
+  --bm-max-width-both: 100%;
+  --bm-svg-shadow: none;
+  --bm-background-opacity: 0;
+  --bm-background-fill: transparent;
+  --bm-region-inactive-opacity: 1;
+  --bm-region-stroke: #0F0F11;
+  --bm-region-stroke-width: 0.18;
+  --bm-transition-duration: 0s;
+}
+
+/* 차트 래퍼(body-chart-container) 크기 — svg는 인라인 width:100%라 래퍼 기준으로 맞춤 */
+.muscle-map__chart {
+  width: min(44vw, 150px);
+  flex-shrink: 0;
+}
+
+.muscle-map__legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.muscle-map__key {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.muscle-map__key::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.muscle-map__key--prim::before {
+  background: var(--primary);
+}
+
+.muscle-map__key--sec::before {
+  background: var(--map-sec, #7d8593);
+}

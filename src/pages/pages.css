@@ -1,0 +1,45 @@
+/* shared page-level components */
+
+.cta {
+  display: block;
+  width: 100%;
+  min-height: 56px;
+  padding: var(--sp-4);
+  border-radius: var(--r-l);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 17px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.cta:active {
+  opacity: 0.85;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  align-self: flex-start;
+  color: var(--fg-muted);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.back:active {
+  opacity: 0.7;
+}
+
+/* small helper text */
+.hint {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--fg-faint);
+}
