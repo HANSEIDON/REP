@@ -5,6 +5,7 @@
   height: 100dvh; /* iOS: avoids 100vh URL-bar bug */
   max-width: 480px; /* desktop preview: phone width */
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .shell__main {
@@ -12,11 +13,26 @@
   overflow-y: auto;
   overflow-x: hidden; /* iOS: no horizontal page scroll */
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   padding-top: calc(var(--safe-top) + var(--sp-4));
   padding-left: var(--sp-4);
   padding-right: var(--sp-4);
-  padding-bottom: var(--sp-6);
+  padding-bottom: calc(104px + var(--safe-bottom));
   min-height: 0;
+}
+
+.shell__main::-webkit-scrollbar {
+  display: none;
+}
+
+.shell__dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  z-index: 40;
 }
 
 /* keep-alive: inactive tab stays mounted but fully hidden (display none,

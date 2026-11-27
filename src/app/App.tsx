@@ -36,8 +36,10 @@ function TabFrame() {
           <WorkoutLog />
         </div>
       </main>
-      <RestBar />
-      <TabBar />
+      <div className="shell__dock">
+        <RestBar />
+        <TabBar />
+      </div>
     </div>
   )
 }

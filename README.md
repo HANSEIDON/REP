@@ -11,9 +11,9 @@ A personal, offline-first strength training tracker built as an installable Prog
 
 ## Screenshots
 
-| Home | Exercises | Muscle Map |
+| Home | Workout & Rest Timer | Muscle Map |
 | :---: | :---: | :---: |
-| ![Home](docs/screenshots/home.png) | ![Exercises](docs/screenshots/exercises.png) | ![Muscle Map](docs/screenshots/muscle-map.png) |
+| <img src="docs/screenshots/home.png" width="240" alt="Home" /> | <img src="docs/screenshots/workout-log.png" width="240" alt="Workout Log" /> | <img src="docs/screenshots/muscle-map.png" width="240" alt="Muscle Map" /> |
 
 ---
 

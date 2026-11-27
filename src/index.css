@@ -107,6 +107,12 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
