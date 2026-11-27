@@ -2,8 +2,38 @@
 
 A personal, offline-first strength training tracker built as an installable Progressive Web App (PWA) for iOS Home Screen and mobile browsers.
 
+**Live App:** [https://rep.haki0615.workers.dev](https://rep.haki0615.workers.dev)
+
 > **Project Goal**  
 > Built by leveraging **Qwen3.8-27B** alongside specialized **Skills** and targeted fine-tuning (state architecture, offline caching, mobile UX, and edge-case verification) to deliver a clean, production-grade product with zero server dependencies.
+
+---
+
+## Screenshots
+
+| Home | Exercises | Muscle Map |
+| :---: | :---: | :---: |
+| ![Home](docs/screenshots/home.png) | ![Exercises](docs/screenshots/exercises.png) | ![Muscle Map](docs/screenshots/muscle-map.png) |
+
+---
+
+## How to Install & Use Offline
+
+### iPhone / iPad (iOS Safari)
+1. Open **[https://rep.haki0615.workers.dev](https://rep.haki0615.workers.dev)** in **Safari** once while online so the Service Worker caches the app shell and exercise data.
+2. Tap the **Share** button (`□↑`) at the bottom of Safari.
+3. Select **Add to Home Screen** → **Add**.
+4. Launch **REP** from your Home Screen. It runs in standalone full-screen mode and works **100% offline** (even in Airplane Mode).
+
+### Android (Chrome)
+1. Open **[https://rep.haki0615.workers.dev](https://rep.haki0615.workers.dev)** in **Chrome**.
+2. Tap the **⋮** menu → **Add to Home screen** / **Install app**.
+
+### Desktop (Chrome / Edge)
+1. Visit **[https://rep.haki0615.workers.dev](https://rep.haki0615.workers.dev)**.
+2. Click the **Install** icon in the address bar (or use it directly in the browser).
+
+> **Tip:** All workout logs, routines, favorites, and settings are stored locally in your browser's IndexedDB. Use **Settings → JSON 내보내기 / JSON 복원** to back up or transfer your data between devices.
 
 ---
 
@@ -38,9 +68,9 @@ npm run build    # Build production bundle (dist/)
 
 ---
 
-## Deployment (Cloudflare Pages)
+## Deployment (Cloudflare Pages / Workers)
 
-Since REP is a purely static PWA, it can be deployed with zero watermarks on Cloudflare Pages via **GitHub integration** or **Direct Upload**:
+Since REP is a purely static PWA, it can be deployed with zero watermarks on Cloudflare via **GitHub integration** or **Direct Upload**:
 
 - **Build command**: `npm run build`
 - **Build output directory**: `dist`
